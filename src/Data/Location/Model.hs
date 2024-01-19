@@ -36,7 +36,7 @@ data LocationRecord = LocationRecord
     , latitudeE7 :: !Latitude
     , longitudeE7 :: !Longitude
     , altitude :: !(Maybe Int)
-    , accuracy :: !(Maybe Word)
+    , accuracy :: !(Maybe Int)
     }
     deriving stock (Generic, Show, Eq, Ord)
 
