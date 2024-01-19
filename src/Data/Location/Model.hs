@@ -22,7 +22,6 @@ module Data.Location.Model (
 
     -- * Types
     LocationRecord (..),
-    LocationRecords (..),
 ) where
 
 import Relude
@@ -43,15 +42,6 @@ data LocationRecord = LocationRecord
 
 -- instance ToJSON LocationRecord
 instance FromJSON LocationRecord
-
--- A list of location records
-newtype LocationRecords = LocationRecords
-    { locationRecordList :: [LocationRecord]
-    }
-    deriving stock (Generic, Show, Eq, Ord)
-
--- instance ToJSON LocationRecords
-instance FromJSON LocationRecords
 
 {- $overview
  This module holds the data definition for LocationRecord which is a container for typical GIS location information.
