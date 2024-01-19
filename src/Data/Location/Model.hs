@@ -33,15 +33,31 @@ import Data.Time.Clock
 -- Record that tracks a location IE a Placemark in KML
 data LocationRecord = LocationRecord
     { timestamp :: !UTCTime
-    , latitudeE7 :: !Int
-    , longitudeE7 :: !Int
+    , latitudeE7 :: !Latitude
+    , longitudeE7 :: !Longitude
     , altitude :: !(Maybe Int)
-    , accuracy :: !(Maybe Int)
+    , accuracy :: !(Maybe Word)
     }
     deriving stock (Generic, Show, Eq, Ord)
 
 -- instance ToJSON LocationRecord
 instance FromJSON LocationRecord
+
+newtype Latitude = Latitude {
+        latitude :: Int
+    }
+    deriving stock (Generic, Show, Eq, Ord)
+
+-- instance ToSON Latitude
+instance FromJSON Latitude
+
+newtype Longitude = Longitude {
+        latitude :: Int
+    }
+    deriving stock (Generic, Show, Eq, Ord)
+
+-- instance ToSON Longitude
+instance FromJSON Longitude
 
 {- $overview
  This module holds the data definition for LocationRecord which is a container for typical GIS location information.
